@@ -6,13 +6,11 @@ let score = {
 
 function game() {
     // you make a choice
-    let userInput = prompt("rock, paper or scissors"); // user input
-    let user = userInput.toLocaleLowerCase;
+    let user = prompt("rock, paper, or scissors").toLowerCase(); // user input
     // what if the user inputs anything else that you don't expect
-    if (user === 'rock' || user === 'paper' || user === 'scissors') {
-        console.log(user);
-    } else {
-        console.log('Error, please type: rock, paper, or scissors.');
+    while (user !== 'rock' && user !== 'paper' && user !== 'scissors') {
+        alert('Error input was not rock, paper, or scissors');
+        game();
     }
     // calling on computerChoice function
     let computer = computerChoice();
