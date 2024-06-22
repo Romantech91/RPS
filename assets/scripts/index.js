@@ -7,7 +7,7 @@ let score = {
 function game() {
     // you make a choice
     let userInput = prompt("rock, paper or scissors"); // user input
-    let user = userInput.toLowerCase();
+    let user = userInput.toLocaleLowerCase;
     // what if the user inputs anything else that you don't expect
     if (user === 'rock' || user === 'paper' || user === 'scissors') {
         console.log(user);
@@ -52,16 +52,16 @@ function computerChoice() {
     }
 }
 // compare the choices
-function getResult(userInput, computer) {
+function getResult(user, computer) {
     // scenarios for different coices by user & computer
-    if (userInput === computer) {
-        score.ties + 1;
+    if (user === computer) {
+        score.ties+1;
         return "It's a tie";
     } else if ((user === 'rock' && computer === 'scissors') || (user === 'paper' && computer === 'rock') || (user === 'scissors' && computer === 'paper')) {
-        score.wins + 1;
+        score.wins+1;
         return "You Win";
     } else {
-        score.losses + 1;
+        score.losses+1;
         return "You lost";
     }
 }
