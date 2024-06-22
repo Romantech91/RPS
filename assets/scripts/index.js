@@ -3,20 +3,26 @@ let score = {
     losses: 0,
     ties: 0,
 }
-// console.log("hit");
-// computer makes a choice
-confirm("you wanna play rps"); // yes or no
-let user = prompt("rock, paper or scissors"); // user input
-let userInput = user.toLowerCase();
-// what if the user inputs anything else that you don't expect
-if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
-    console.log(userInput);
-} else {
-    console.log('Error, please type: rock, paper, or scissors.');
+
+function game() {
+    // you make a choice
+    let userInput = prompt("rock, paper or scissors"); // user input
+    let user = user.toLowerCase();
+    // what if the user inputs anything else that you don't expect
+    if (user === 'rock' || user === 'paper' || user === 'scissors') {
+        console.log(user);
+    } else {
+        console.log('Error, please type: rock, paper, or scissors.');
+    }
+    // calling on computerChoice function
+    let computer = computerChoice();
+
+    alert("Computer picked: " + computer);
 }
-// alert("hi"); //
-// you make a choice
-// compare the choices
+
+
+
+// computer makes a choice
 function computerChoice() {
     const number = Math.floor(Math.random() * 3);
     switch (number) {
@@ -28,11 +34,24 @@ function computerChoice() {
             return 'scissors';
     }
 }
+// compare the choices
+function getResult(userInput, computer) {
+    // scenarios for different coices by user & computer
+    if (userInput === computer) {
+        score.ties + 1;
+        return "It's a tie";
+    } else if ((user === 'rock' && computer === 'scissors') || (user === 'paper' && computer === 'rock') || (user === 'scissors' && computer === 'paper')) {
+        score.wins + 1;
+        return "You Win";
+    } else {
+        score.losses + 1;
+        return "You lost";
+    }
+}
 
-console.log(computerChoice());
-// scenarios for different coices by user & computer
-// if computer wins, mark it as a win for it
+
 // ask the user if they wanna play again
 // play again if yes
 // exit the app if no
 // show final results
+confirm("you wanna play rps"); // yes or no
