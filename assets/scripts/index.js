@@ -53,13 +53,13 @@ function computerChoice() {
 function getResult(user, computer) {
     // scenarios for different coices by user & computer
     if (user === computer) {
-        score.ties+1;
+        score.ties++;
         return "It's a tie";
     } else if ((user === 'rock' && computer === 'scissors') || (user === 'paper' && computer === 'rock') || (user === 'scissors' && computer === 'paper')) {
-        score.wins+1;
+        score.wins++;
         return "You Win";
     } else {
-        score.losses+1;
+        score.losses++;
         return "You lost";
     }
 }
