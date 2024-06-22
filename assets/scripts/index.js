@@ -29,11 +29,15 @@ function game() {
     // shows score standings
     alert('Score Standings - Wins: ' + score.wins + " - Losses: " + score.losses + " - Ties: " + score.ties);
 
-
-
+    // ask if want to play again
+    let play = confirm("Would you like to play again?");
+    
+    if (play) {
+        game(); // recall the game function playing again
+    } else {
+        alert('Thanks for playing. Here are the finale results. Finale Score - Wins: ' + score.wins + " - Losses: " + score.losses + " - Ties: " + score.ties); // show final results // exit the app if no
+    }
 }
-
-
 
 // computer makes a choice
 function computerChoice() {
@@ -63,12 +67,5 @@ function getResult(userInput, computer) {
 }
 
 
-
-// ask the user if they wanna play again
-// play again if yes
-// exit the app if no
-// show final results
-
-
-// start the game
+// initial start of game
 game();
