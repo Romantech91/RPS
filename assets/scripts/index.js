@@ -1,12 +1,18 @@
 // console.log("hit");
 // computer makes a choice
 confirm("you wanna play rps"); // yes or no
-prompt("rock, paper or scissors"); // user input
+const user = prompt("rock, paper or scissors"); // user input
+const userInput = user.toLowerCase();
 // what if the user inputs anything else that you don't expect
+if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
+    console.log(userInput);
+} else {
+    console.log('Error, please type: rock, paper, or scissors.');
+}
 // alert("hi"); //
 // you make a choice
 // compare the choices
-const computerChoice = () => {
+function computerChoice() {
     const number = Math.floor(Math.random() * 3);
     switch (number) {
         case 0:
