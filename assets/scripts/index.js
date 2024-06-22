@@ -1,8 +1,13 @@
+let score = {
+    wins: 0,
+    losses: 0,
+    ties: 0,
+}
 // console.log("hit");
 // computer makes a choice
 confirm("you wanna play rps"); // yes or no
-const user = prompt("rock, paper or scissors"); // user input
-const userInput = user.toLowerCase();
+let user = prompt("rock, paper or scissors"); // user input
+let userInput = user.toLowerCase();
 // what if the user inputs anything else that you don't expect
 if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
     console.log(userInput);
