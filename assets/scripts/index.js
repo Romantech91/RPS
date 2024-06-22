@@ -7,7 +7,7 @@ let score = {
 function game() {
     // you make a choice
     let userInput = prompt("rock, paper or scissors"); // user input
-    let user = user.toLowerCase();
+    let user = userInput.toLowerCase();
     // what if the user inputs anything else that you don't expect
     if (user === 'rock' || user === 'paper' || user === 'scissors') {
         console.log(user);
@@ -17,7 +17,20 @@ function game() {
     // calling on computerChoice function
     let computer = computerChoice();
 
+    // shows the computers pick
     alert("Computer picked: " + computer);
+
+    // calling on the getResult function
+    let result = getResult(user, computer);
+
+    // shows result of game
+    alert(result);
+
+    // shows score standings
+    alert('Score Standings - Wins: ' + score.wins + " - Losses: " + score.losses + " - Ties: " + score.ties);
+
+
+
 }
 
 
@@ -50,8 +63,12 @@ function getResult(userInput, computer) {
 }
 
 
+
 // ask the user if they wanna play again
 // play again if yes
 // exit the app if no
 // show final results
-confirm("you wanna play rps"); // yes or no
+
+
+// start the game
+game();
